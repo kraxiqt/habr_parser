@@ -1,13 +1,12 @@
-from unittest import expectedFailure
-
+from fake_useragent import UserAgent
 import requests
 from bs4 import BeautifulSoup
 import lxml
-
+ua = UserAgent()
 url = 'https://habr.com/ru/articles/top/daily/'
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0',
+    'User-Agent': ua.random,
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
 }
 
